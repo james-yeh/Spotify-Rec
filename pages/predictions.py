@@ -16,15 +16,13 @@ import json
 
 
 def predict(name):
-    df = pd.DataFrame(
-        columns=['name'
-], 
-        data=[[name]]
-    )
+    
+    example = df_clean.loc[df_clean['name'] == name].head(1)
 
-    recommendation = model.predict(df[0])
+    recommendation = model.predict(example)[0]
 
     return recommendation
+
 
 
 column1 = dbc.Col(
