@@ -8,22 +8,55 @@ from dash.dependencies import Input, Output, State
 import dash_daq as daq
 # Imports from this application
 from app import app
-# import pickle, json
+import joblib
 import pandas as pd
 import numpy as np
+import sklearn
 import requests
 import json
 
+#from spotify_model_2.
+# import csvs from github
+url_us = "https://raw.githubusercontent.com/James-yeh/Spotify-Rec/main/US.csv"
+url_tracks = "https://media.githubusercontent.com/media/James-yeh/Spotify-Rec/main/tracks.csv"
+url_datao = "https://raw.githubusercontent.com/James-yeh/Spotify-Rec/main/data_o.csv"
+url_dbgo = "https://raw.githubusercontent.com/James-yeh/Spotify-Rec/main/data_by_genres_o.csv"
+
+df = pd.read_csv('data.csv')
+nn = joblib.load('model.z')
+enc = joblib.load('encoder.z')
+
+
+def song_suggester(song_obj):
+    distance, neighbors = nn.kneighbors(np.array([song_obj]))
+    suggestions = []
+    for i in neighbors[0][1:]:
+        suggestions.append([df['name'].iloc[i],df['artists'].iloc[i]*21583])
+    sug = pd.DataFrame(suggestions,columns = ['song','artist'])
+    sug['artist'] = enc.inverse_transform(sug['artist'].to_numpy().astype(int))
+    return sug
+# returns a dataframe of 20 songs from song suggester from an exact name
 
 def predict(name):
-    
-    example = df_clean.loc[df_clean['name'] == name].head(1)
+    song = 'song'
+    try:
+        song = df[df['name']==name]
+        recommendation = song_suggester(song.drop(columns=['name']).iloc[0])['song'][0]
+    except:
+        recommendation = 'Invalid Song Name. Try Again'
 
-    recommendation = model.predict(example)[0]
-
+#    return song
     return recommendation
+# Just call song(song_name) to get a d
 
 
+
+
+# Possible code to provide suggestions for song names / auto complete
+# name_list = list(df['name'])
+#         html.Datalist(id="name_list", children=[
+#         html.Option(value=name) for name in name_list
+#     ]),
 
 column1 = dbc.Col(
     [
@@ -33,10 +66,18 @@ column1 = dbc.Col(
         dcc.Input(
             id = "name",
             type='text',
-            autocomplete='on',
-#            list = list(df['name']),
-            className='mb-5', size=540
+#            autoComplete='True',
+#            list = 'name_list',
+            className='mb-5',
             ),
+
+        dbc.Button("Predict Kickstarter Success", id="example-button", color='primary',
+                   className="mr-2"),
+        html.Div(id='container-button-timestamp'),
+        html.Span(id="example-output",
+                  style={"vertical-align": "middle"}),
+
+        
     ],
     md=6,
 )
