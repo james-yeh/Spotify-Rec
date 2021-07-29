@@ -94,7 +94,9 @@ footer = dbc.Container(
             )
         ],
         style={
-            'text-align': 'justify'
+            'text-align': 'justify',
+            'position':'absolute',
+            'bottom': '50px'
         }
     )
 )
@@ -107,15 +109,17 @@ app.layout = html.Div(
     [
         dcc.Location(id='url', refresh=False), 
         navbar,
-        html.Br(), 
+        html.Hr(), 
         html.Br(),
         dbc.Container(
             id='page-content',
             className='mt-4',
+            fluid=False,
             style={
                 'background-color':'light-gray',
                 'opacity':'0.9' 
-            }), 
+            },
+        ), 
         html.Br(),
         html.Br(), 
         footer
