@@ -70,7 +70,7 @@ column1 = dbc.Col(
             className='mb-5',
             ),
 
-        dbc.Button("Predict Kickstarter Success", id="example-button", color='primary',
+        dbc.Button("Suggest", id="example-button", color='primary',
                    className="mr-2"),
         html.Div(id='container-button-timestamp'),
         html.Span(id="example-output",
