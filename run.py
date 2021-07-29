@@ -12,7 +12,7 @@ from pages import index, predictions, insights, process
 # Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
     brand='Spotify Song Suggester',
-    brand_href='/', 
+    brand_href='/',
     children=[
         dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
         # dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
@@ -21,7 +21,10 @@ navbar = dbc.NavbarSimple(
     sticky='top',
     color='lime', 
     light=True, 
-    dark=False
+    dark=False,
+    brand_style={
+        'font-size':'30px'
+    }
 )
 
 # Footer docs:
@@ -32,33 +35,90 @@ navbar = dbc.NavbarSimple(
 # className='lead' : https://getbootstrap.com/docs/4.3/content/typography/#lead
 footer = dbc.Container(
     dbc.Row(
-        dbc.Col(
-            html.P(
+        [
+            dbc.Col(
                 [
-                    html.Span('Christopher Chilton', className='mr-2'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ChristopherKchilton/'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/christopher-chilton-a15aa492/'), 
-                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                    html.Span('James Yeh', className='mr-2'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/James-yeh'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/james-yeh-5aa949b4/'), 
-                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                    html.Span('Matthew Blackburn', className='mr-2'),
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/matthewblackbu'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/matthew-blackburn-/'), 
-                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                    html.Span('Brett Havertz', className='mr-2'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/bretthavertz'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/brett-havertz-a570b1150/'), 
-                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                    html.Span('Sam Ebner', className='mr-2'),  
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ebnersam'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/sam-ebner/'), 
-                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                ], 
-                className='lead'
+                    dbc.Row(
+                        [         
+                            html.P(
+                                [
+                                    html.Span('Christopher Chilton', className='mr-2'), 
+                                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ChristopherKchilton/'), 
+                                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/christopher-chilton-a15aa492/'), 
+                                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
+                                ],
+                                className='lead'
+                            )
+                        ],
+                        no_gutters=True,
+                        form=True
+                    ),
+                    dbc.Row(
+                        [         
+                            html.P(
+                                [
+                                    html.Span('James Yeh', className='mr-2'), 
+                                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/James-yeh'),  
+                                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/james-yeh-5aa949b4/'),  
+                                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'),
+                                ],
+                                className='lead'
+                            )
+                        ],
+                        no_gutters=True,
+                        form=True
+                    ),
+                    dbc.Row(
+                        [         
+                            html.P(
+                                [
+                                    html.Span('Matthew Blackburn', className='mr-2'),
+                                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/matthewblackbu'), 
+                                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/matthew-blackburn-/'), 
+                                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'),
+                                ],
+                                className='lead'
+                            )
+                        ],
+                        no_gutters=True,
+                        form=True
+                    ),
+                    dbc.Row(
+                        [         
+                            html.P(
+                                [
+                                    html.Span('Brett Havertz', className='mr-2'), 
+                                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/bretthavertz'), 
+                                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/brett-havertz-a570b1150/'), 
+                                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
+                                ],
+                                className='lead'
+                            )
+                        ],
+                        no_gutters=True,
+                        form=True
+                    ),
+                    dbc.Row(
+                        [         
+                            html.P(
+                                [
+                                    html.Span('Sam Ebner', className='mr-2'),  
+                                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ebnersam'), 
+                                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/sam-ebner/'), 
+                                    # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
+                                ],
+                                className='lead'
+                            )
+                        ],
+                        no_gutters=True,
+                        form=True
+                    )         
+                ],
+                className='lead',
             )
-        )
+        ],
+        style={
+        }
     )
 )
 

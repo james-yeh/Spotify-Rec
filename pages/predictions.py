@@ -60,9 +60,9 @@ def predict(name):
 
 column1 = dbc.Col(
     [
-        dcc.Markdown('## Song Recommendation', className='mb-5'),
+        dcc.Markdown('### Song', className='mb-5'),
         # Creates a Goal input and pass the value
-        dcc.Markdown('#### Type the name of a song to receive recommendations for similar songs'),
+        dcc.Markdown('##### Type the name of a song to receive recommendations for similar songs'),
         dcc.Input(
             id = "name",
             type='text',
@@ -71,7 +71,7 @@ column1 = dbc.Col(
             className='mb-5',
             ),
 
-        dbc.Button("Predict Kickstarter Success", id="example-button", color='primary',
+        dbc.Button("Suggest", id="example-button", color='primary',
                    className="mr-2"),
         html.Div(id='container-button-timestamp'),
         html.Span(id="example-output",
@@ -94,7 +94,7 @@ column1 = dbc.Col(
 # Function that passes values to predict function on button click
 def on_button_click(n, name):
     '''
-    on_button_click function passes information from the model on clicl
+    on_button_click function passes information from the model on click
     '''
     if n is None:
         return "Please provide the name of a song"
@@ -129,12 +129,10 @@ column2 = dbc.Col(
 column3 = dbc.Col(
     [
         # Create a lable and pass prediction value
-        html.H2('Song Recommendation', className='mb-4'),
+        html.H2('Recommendation', className='mb-4'),
         html.Div(id='prediction-content', className='lead'),
     ],
     className='mb-40',
     md=5
 )
 layout = dbc.Row([column1, column2, column3])
-
-
