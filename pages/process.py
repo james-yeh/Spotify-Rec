@@ -16,14 +16,9 @@ column1 = dbc.Col(
             """
         
             ## The Build Process
-
-            #### Data Pipeline
- 
-            #### The Model
+            #### Our app uses nearest neighbor to predict a song recommendation 
+            #### using a Kaggle dataset.  The app itself is build from plotly.
         
-            #### Possible Improvement
-
-
 
             """
         ),
