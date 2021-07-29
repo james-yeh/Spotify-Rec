@@ -41,15 +41,14 @@ def predict(name):
     song = 'song'
     try:
         song = df[df['name']==name]
-        recommendation = song_suggester(song.drop(columns=['name']).iloc[0])['song'][0]
+        song_name = song_suggester(song.drop(columns=['name']).iloc[0])['song'][0]
+        artist_name = song_suggester(song.drop(columns=['name']).iloc[0])['artist'][0][2:-2]
+        recommendation = '"{}" by {}'.format(song_name, artist_name)
     except:
-        recommendation = 'Invalid Song Name. Try Again'
+        recommendation = 'Invalid Song Name or Incorrect Spelling, Please Try Again'
 
 #    return song
     return recommendation
-# Just call song(song_name) to get a d
-
-
 
 
 # Possible code to provide suggestions for song names / auto complete
@@ -60,9 +59,9 @@ def predict(name):
 
 column1 = dbc.Col(
     [
-        dcc.Markdown('### Song', className='mb-5'),
+        dcc.Markdown('## Favorite Song', className='mb-5'),
         # Creates a Goal input and pass the value
-        dcc.Markdown('##### Type the name of a song to receive recommendations for similar songs'),
+        dcc.Markdown('#### Please enter the name of a song you like.', className='mb-5'),
         dcc.Input(
             id = "name",
             type='text',
@@ -71,7 +70,7 @@ column1 = dbc.Col(
             className='mb-5',
             ),
 
-        dbc.Button("Suggest", id="example-button", color='primary',
+        dbc.Button("Predict Kickstarter Success", id="example-button", color='primary',
                    className="mr-2"),
         html.Div(id='container-button-timestamp'),
         html.Span(id="example-output",
@@ -94,32 +93,13 @@ column1 = dbc.Col(
 # Function that passes values to predict function on button click
 def on_button_click(n, name):
     '''
-    on_button_click function passes information from the model on click
+    on_button_click function passes information from the model on clicl
     '''
     if n is None:
         return "Please provide the name of a song"
     else:
         recommendation = predict(name)
         return '{}'.format(recommendation)
-
-# Create another callback for gauge probability
-@app.callback(
-    Output("my-gauge",
-           "value"), [Input("example-button", 'n_clicks')],
-    [
-        State('name', 'value'),
-    ]
-)
-# Pass predict function to retrive y_pred_proba
-def predict_button_click(n_clicks, name):
-    '''
-    on_button_click function passes information from the model on click
-    '''
-    recommendation = predict(name)
-    if n_clicks == None:
-        return 0
-    else:
-        return recommendation
 
 # Using a blank column for spacing
 column2 = dbc.Col(
@@ -129,7 +109,7 @@ column2 = dbc.Col(
 column3 = dbc.Col(
     [
         # Create a lable and pass prediction value
-        html.H2('Recommendation', className='mb-4'),
+        html.H2('Song Recommendation', className='mb-4'),
         html.Div(id='prediction-content', className='lead'),
     ],
     className='mb-40',

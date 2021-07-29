@@ -17,8 +17,13 @@ column1 = dbc.Col(
             """
         
             ### Do you need a song recommendation?
-           
 
+            Are you tired of listening the same songs and want to try something new?
+            If you need some help on finding new songs to listen to, then let machine
+            learning solve your problem. By using Spotify's data on each song we are
+            able to predict similar songs based on many features of the songs, including
+            popularity, loudness and danceability. So take a moment to expland the songs
+            you listen to and find a new song you may like.
 
             """
         ),
@@ -29,7 +34,7 @@ column1 = dbc.Col(
 
 column2 = dbc.Col(
     [
-#        html.Img(src='', className='img-fluid')
+        html.Img(src='assets/music_track.png', className='img-fluid')
 
     ]
 )
