@@ -11,7 +11,7 @@ from pages import index, predictions, insights, process
 
 # Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
-    brand='Song Recommendation 2',
+    brand='Spotify Song Suggester',
     brand_href='/', 
     children=[
         dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
@@ -36,29 +36,24 @@ footer = dbc.Container(
             html.P(
                 [
                     html.Span('Christopher Chilton', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:chris.kchilton@gmail.com'), 
                     html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ChristopherKchilton/'), 
                     html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/christopher-chilton-a15aa492/'), 
                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
                     html.Span('James Yeh', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href=''), 
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/James-yeh'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/james-yeh-5aa949b4/'), 
                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                    html.Span('Matthew Blackburn', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href=''), 
+                    html.Span('Matthew Blackburn', className='mr-2'),
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/matthewblackbu'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/matthew-blackburn-/'), 
                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
                     html.Span('Brett Havertz', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href=''), 
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/bretthavertz'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/brett-havertz-a570b1150/'), 
                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
-                    html.Span('Same Ebner', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href=''), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href=''), 
+                    html.Span('Sam Ebner', className='mr-2'),  
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ebnersam'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/sam-ebner/'), 
                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
                 ], 
                 className='lead'

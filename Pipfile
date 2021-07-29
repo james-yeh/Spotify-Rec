@@ -11,6 +11,9 @@ dash-bootstrap-components = "*"
 requests = "*"
 joblib = "*"
 scikit-learn = "*"
+gunicorn = "*"
+matplotlib = "*"
+plotly = "*"
 
 [dev-packages]
 
