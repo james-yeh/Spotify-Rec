@@ -42,7 +42,7 @@ footer = dbc.Container(
                         [         
                             html.P(
                                 [
-                                    html.Span('Christopher Chilton', className='mr-2'), 
+                                    html.Span('Christopher Chilton', className='mr-2'),
                                     html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/ChristopherKchilton/'), 
                                     html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/christopher-chilton-a15aa492/'), 
                                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
@@ -94,6 +94,7 @@ footer = dbc.Container(
             )
         ],
         style={
+            'text-align': 'justify'
         }
     )
 )
@@ -102,13 +103,27 @@ footer = dbc.Container(
 # html.Div: https://dash.plot.ly/getting-started
 # dcc.Location: https://dash.plot.ly/dash-core-components/location
 # dbc.Container: https://dash-bootstrap-components.opensource.faculty.ai/l/components/layout
-app.layout = html.Div([
-    dcc.Location(id='url', refresh=False), 
-    navbar, 
-    dbc.Container(id='page-content', className='mt-4'), 
-    html.Hr(), 
-    footer
-])
+app.layout = html.Div(
+    [
+        dcc.Location(id='url', refresh=False), 
+        navbar,
+        html.Br(), 
+        html.Br(),
+        dbc.Container(
+            id='page-content',
+            className='mt-4',
+            style={
+                'background-color':'light-gray',
+                'opacity':'0.9' 
+            }), 
+        html.Br(),
+        html.Br(), 
+        footer
+    ],
+    style={
+        'background-image':'url("/assets/background.jpg")'
+    }
+)
 
 
 # URL Routing for Multi-Page Apps: https://dash.plot.ly/urls

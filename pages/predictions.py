@@ -60,7 +60,6 @@ def predict(name):
 
 column1 = dbc.Col(
     [
-        dcc.Markdown('### Song', className='mb-5'),
         # Creates a Goal input and pass the value
         dcc.Markdown('##### Type the name of a song to receive recommendations for similar songs'),
         dcc.Input(
@@ -129,7 +128,6 @@ column2 = dbc.Col(
 column3 = dbc.Col(
     [
         # Create a lable and pass prediction value
-        html.H2('Recommendation', className='mb-4'),
         html.Div(id='prediction-content', className='lead'),
     ],
     className='mb-40',
