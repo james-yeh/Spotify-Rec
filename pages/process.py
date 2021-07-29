@@ -18,14 +18,14 @@ column1 = dbc.Col(
             ## The Build Process
 
             #### Spotify Data
-            Spotify categorizes songs using various features numerically in order to represent
-            different characteristics of the song.  These features include but are not limited to: 
+            Spotify categorizes each song by rating different features numerically.  These ratings 
+            represent different characteristics of the song.  Features include but are not limited to: 
             energy, key, loudness, valence, danceability.
 
             #### Our Predictions
-            Our app uses a dataset from Kaggle containing information gathered from Spotify
-            through their API.  Using a nearest neighbor model, our app is able to make recommendations
-            by finding the next best song based on euclidean distance from an inputted song. 
+            Our app uses a dataset from Kaggle containing information gathered from Spotify's API.  
+            Using a nearest neighbor model, our app is able to make a recommendation by finding the 
+            next best song based on euclidean distance from whatever inputted song.  
 
 
             """
