@@ -18,15 +18,14 @@ column1 = dbc.Col(
             ## The Build Process
 
             #### Spotify Data
-            Spotfy created a Convolutional Neural Network they run the songs on their through to
-            represent the songs in numerical values. These values try to represent how much
-            energy a song may have, how loud a song may be or even try to predict the danceability
-            of a song.
+            Spotify categorizes songs using various features numerically in order to represent
+            different characteristics of the song.  These features include but are not limited to: 
+            energy, key, loudness, valence, danceability.
 
             #### Our Predictions
-            Our app uses a Kaggle dataset that gathered a large number of Spotify songs and their information.
-            Specifically it focuses on the information Spotify provides on each song and uses a Nearest Neighbor 
-            machine learning algorithm to make a song recommendation. 
+            Our app uses a dataset from Kaggle containing information gathered from Spotify
+            through their API.  Using a nearest neighbor model, our app is able to make recommendations
+            by finding the next best song based on euclidean distance from an inputted song. 
 
 
             """
