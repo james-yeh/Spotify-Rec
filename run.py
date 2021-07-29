@@ -48,13 +48,7 @@ footer = dbc.Container(
                                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
                                 ],
                                 className='lead'
-                            )
-                        ],
-                        no_gutters=True,
-                        form=True
-                    ),
-                    dbc.Row(
-                        [         
+                            ),
                             html.P(
                                 [
                                     html.Span('James Yeh', className='mr-2'), 
@@ -63,13 +57,7 @@ footer = dbc.Container(
                                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'),
                                 ],
                                 className='lead'
-                            )
-                        ],
-                        no_gutters=True,
-                        form=True
-                    ),
-                    dbc.Row(
-                        [         
+                            ),
                             html.P(
                                 [
                                     html.Span('Matthew Blackburn', className='mr-2'),
@@ -78,13 +66,7 @@ footer = dbc.Container(
                                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'),
                                 ],
                                 className='lead'
-                            )
-                        ],
-                        no_gutters=True,
-                        form=True
-                    ),
-                    dbc.Row(
-                        [         
+                            ),
                             html.P(
                                 [
                                     html.Span('Brett Havertz', className='mr-2'), 
@@ -93,13 +75,7 @@ footer = dbc.Container(
                                     # html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
                                 ],
                                 className='lead'
-                            )
-                        ],
-                        no_gutters=True,
-                        form=True
-                    ),
-                    dbc.Row(
-                        [         
+                            ),
                             html.P(
                                 [
                                     html.Span('Sam Ebner', className='mr-2'),  
@@ -112,7 +88,7 @@ footer = dbc.Container(
                         ],
                         no_gutters=True,
                         form=True
-                    )         
+                    ),
                 ],
                 className='lead',
             )
